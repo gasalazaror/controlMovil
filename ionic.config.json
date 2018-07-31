@@ -1,0 +1,7 @@
+{
+  "name": "controlmobil",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
