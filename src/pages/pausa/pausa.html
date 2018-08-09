@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar pausa</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <span color="primary">
+
+        </span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="seleccionarMotivo()">
+
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Espera por:</ion-label>
+        <ion-select formControlName="motivo">
+          <ion-option value="FALTA DE AUTORIZACIÓN">FALTA DE AUTORIZACIÓN</ion-option>
+          <ion-option value="FALTA DE REPUESTOS">FALTA DE REPUESTOS</ion-option>
+          <ion-option value="TRABAJOS DE TERCEROS">TRABAJOS DE TERCEROS</ion-option>
+          <ion-option value="OTRO TRABAJO">OTRO TRABAJO</ion-option>
+          <ion-option value="BREAK">BREAK</ion-option>
+          <ion-option value="ALMUERZO">ALMUERZO</ion-option>
+          <ion-option value="FINALIZACIÓN DE JORNADA LABORAL">FINALIZACIÓN DE JORNADA LABORAL</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-textarea formControlName="descripcion"></ion-textarea>
+
+      </ion-item>
+
+
+        <button ion-button type="submit" block [disabled]="!form.valid">Agregar pausa</button>
+  
+
+
+
+    </ion-list>
+  </form>
+
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>En espera de producción</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h5>{{tareas.length}} tarea(s) finalizadas</h5>
+  <hr>
+  <ion-list>
+    <ion-item *ngFor="let tarea of tareas">
+      <h2>{{tarea.servicio.descripcion}}</h2>
+
+      <p *ngIf="tarea.detalle">
+        <strong>Tiempo estandar:</strong> {{tarea.detalle.tiempoEstandar}}</p>
+      <p>
+
+        <p *ngIf="tarea.detalle">
+          <strong>Tiempo real:</strong> {{tarea.detalle.tiempoReal}}</p>
+        <p>
+          <p *ngIf="tarea.detalle">
+            <strong>Eficiencia:</strong> {{tarea.detalle.eficiencia}}%</p>
+          <p>
+            <strong>Orden:</strong>{{tarea.orden.id}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
